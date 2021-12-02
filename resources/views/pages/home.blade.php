@@ -187,7 +187,7 @@
         <div class="row g-0">
             <div class="card-body bg-green py-4 px-5 text-center">
                 <h4 class="card-title text-white">Panduan Isolasi Mandiri</h4>
-                <a href="/kontribusi/panduan-isoma" class="btn-white rounded-pill">klik disini</a>
+                <a href="/kebutuhan/tips-isoma" class="btn-white rounded-pill">klik disini</a>
             </div>
         </div>
     </div>
