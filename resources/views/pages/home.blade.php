@@ -82,7 +82,7 @@
             <div class="text-center">
                 <div class="card bg-green border-0 mb-2">
                     <div class="card-body">
-                        <i class="fas fa-stethoscope d-block mb-1 text-white"></i>
+                        <i class="fas fa-syringe d-block mb-1 text-white"></i>
                     </div>
                 </div>
                 <p>Tempat Vaksin</p>
@@ -112,44 +112,54 @@
 </section>
 {{-- end kategori kebutuhan --}}
 
-<section>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+{{-- kontribusi  --}}
+<section class="kontribusi" id="kontribusi">
+    <h2 class="mb-3">Cara Berkontribusi</h2>
+    <div class="row">
+        <div class="col-12 col-lg-6 mb-3 bg-white">
+            <div class="card mb-3 border-0 shadow-lg p-2">
+                <div class="row g-0 justify-content-center">
+                  <div class="col-4 d-flex align-content-center">
+                    <img src="/assets/images/kontribusi.png" class="img-fluid" alt="Cara Berkontribusi">
+                  </div>
+                  <div class="col-8">
+                    <div class="card-body bg-white">
+                        <p class="card-title text-black fs-5">Daftar Donor Darah</p>
+                        <p class="card-text text-gray">Berdonor darah plasma konvalesan (hanya diisi oleh calon pendonor).</p>
+                        <a href="/kontribusi/donor-darah" class="btn bg-green text-white border-0">Donor darah sekarang</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-12 col-lg-6 mb-3 bg-white">
+            <div class="card mb-3 border-0 shadow-lg p-2">
+                <div class="row g-0 justify-content-center">
+                  <div class="col-4 d-flex align-content-center">
+                    <img src="/assets/images/relawan.png" class="img-fluid" alt="Daftar jadi relawan">
+                  </div>
+                  <div class="col-8">
+                    <div class="card-body bg-white">
+                        <p class="card-title text-black fs-5">Daftar Jadi Relawan</p>
+                        <p class="card-text text-gray">Gabung jadi relawan untuk mengumpulkan data dan menjawab pertanyaan warga via hotline.</p>
+                        <a href="/kontribusi/jadi-relawan" class="btn bg-green text-white border-0">Jadi relawan sekarang</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+    <div class="card mb-3 border-0 shadow-lg bg-green panduan-isoma">
+        <div class="row g-0 justify-content-center">
+            <div class="card-body bg-green py-4 px-5 text-center">
+                <h4 class="card-title text-white">Panduan Isolasi Mandiri</h4>
+                <a href="/kontribusi/panduan-isoma" class="btn-white rounded-pill">klik disini</a>
+            </div>
+        </div>
+    </div>
 </section>
+{{-- end kontribusi  --}}
+
 
 
 

@@ -4,12 +4,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 /* default styles */
+body{
+    background-color: #fff;
+    margin-top: 70px;
+}
 section{
-    margin: 30px 0;
-    padding: 30px 0;
+    margin-top: 30px;
+    padding: 20px 0;
 }
 .bg-green{
     background-color: #1ACEA3;
+}
+
+.text-green{
+    color: #1ACEA3;
 }
 
 .bg-gray{
@@ -117,9 +125,7 @@ h2{
 
 
 /* banner styles */
-.banner .welcome span{
-    
-}
+
 
 
 
@@ -137,6 +143,40 @@ h2{
     font-weight: 500;
 }
 
+/* kontribusi styles */
+.kontribusi{
+    margin-bottom: 150px;
+}
+.kontribusi .card{
+    border-radius: 12px;
+}
+.kontribusi .card-body{
+    border-radius: 12px;
+}
+.kontribusi .card .card-title{
+    font-weight: 500;
+}
+
+.kontribusi .card.panduan-isoma .card-title{
+    font-weight: 700;
+}
+
+.kontribusi .card.panduan-isoma .btn-white{
+    display: inline-block;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    border: 1px solid #fff;
+    padding: 5px 0;
+    width: 80%;
+    transition: .3s;
+}
+
+.kontribusi .card.panduan-isoma .btn-white:hover{
+    background-color: #fff;
+    color: #1ACEA3;
+}
+
 
 
 
@@ -152,14 +192,14 @@ h2{
 
 /* responsive styles */
 @media (min-width: 992px) {
-    body{
+    /* body{
         margin-top: 100px;
-    }
-    .navbar{
+    } */
+    /* .navbar{
         position :fixed;
         top: 0;
         left: 0;
         right: 0;
         z-index: 1000;
-    }
+    } */
 }
