@@ -15,7 +15,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('pages.home', [
-        'title' => 'Home'
+        'title' => 'Sehat.i | Aplikasi Penyedia Informasi Kesehatan'
+    ]);
+});
+
+Route::get('/ruang-bantu', function () {
+    return view('pages.ruang-bantu', [
+        'title' => 'Ruang Bantu'
     ]);
 });
 
