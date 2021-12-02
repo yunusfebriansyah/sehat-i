@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,13 @@ Route::get('/simpan', function () {
 Route::get('/kebutuhan/tips-isoma', function () {
     return view('pages.tips-isoma', [
         'title' => 'Panduan Isoma'
+    ]);
+});
+
+Route::get('/kebutuhan', function (Request $request) {
+    return view('pages.kebutuhan', [
+        'title' => "Kebutuhan $request",
+        'request' => $request
     ]);
 });
 

@@ -28,7 +28,7 @@
 <section class="kategori-kebutuhan" id="kategoriKebutuhan">
     <h2 class="mb-3">Kategori Kebutuhan</h2>
     <div class="row justify-content-center">
-        <a href="/kebutuhan/oksigen" class="col-6 col-md-3 kebutuhan-item">
+        <a href="/kebutuhan?r=oksigen" class="col-6 col-md-3 kebutuhan-item">
             <div class="text-center">
                 <div class="card border-0 mb-2 shadow">
                     <div class="card-body">
@@ -38,7 +38,7 @@
                 <p>Oksigen</p>
             </div>
         </a>
-        <a href="/kebutuhan/ambulans" class="col-6 col-md-3 kebutuhan-item">
+        <a href="/kebutuhan?r=ambulans" class="col-6 col-md-3 kebutuhan-item">
             <div class="text-center">
                 <div class="card border-0 mb-2 shadow">
                     <div class="card-body">
@@ -48,7 +48,7 @@
                 <p>Ambulans</p>
             </div>
         </a>
-        <a href="/kebutuhan/plasma" class="col-6 col-md-3 kebutuhan-item">
+        <a href="/kebutuhan?r=plasma" class="col-6 col-md-3 kebutuhan-item">
             <div class="text-center">
                 <div class="card border-0 mb-2 shadow">
                     <div class="card-body">
@@ -58,7 +58,7 @@
                 <p>Plasma</p>
             </div>
         </a>
-        <a href="/kebutuhan/puskesmas" class="col-6 col-md-3 kebutuhan-item">
+        <a href="/kebutuhan?r=puskesmas" class="col-6 col-md-3 kebutuhan-item">
             <div class="text-center">
                 <div class="card border-0 mb-2 shadow">
                     <div class="card-body">
@@ -68,7 +68,7 @@
                 <p>Puskesmas</p>
             </div>
         </a>
-        <a href="/kebutuhan/swab" class="col-6 col-md-3 kebutuhan-item">
+        <a href="/kebutuhan?r=swab" class="col-6 col-md-3 kebutuhan-item">
             <div class="text-center">
                 <div class="card border-0 mb-2 shadow">
                     <div class="card-body">
@@ -78,7 +78,7 @@
                 <p>Test Swab</p>
             </div>
         </a>
-        <a href="/kebutuhan/vaksin" class="col-6 col-md-3 kebutuhan-item">
+        <a href="/kebutuhan?r=vaksin" class="col-6 col-md-3 kebutuhan-item">
             <div class="text-center">
                 <div class="card border-0 mb-2 shadow">
                     <div class="card-body">
@@ -88,7 +88,7 @@
                 <p>Tempat Vaksin</p>
             </div>
         </a>
-        <a href="/kebutuhan/isolasi" class="col-6 col-md-3 kebutuhan-item">
+        <a href="/kebutuhan?r=isolasi" class="col-6 col-md-3 kebutuhan-item">
             <div class="text-center">
                 <div class="card border-0 mb-2 shadow">
                     <div class="card-body">
