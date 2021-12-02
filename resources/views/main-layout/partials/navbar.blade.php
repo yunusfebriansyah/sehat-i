@@ -1,22 +1,22 @@
 {{-- main navbar --}}
 <nav class="navbar navbar-expand-lg navbar-dark bg-green">
     <div class="container">
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" href="/home/">
             <img src="/assets/images/logo.png" alt="" srcset="">
         </a>
       <div>
         <ul class="navbar-nav ms-auto">
           <li class="nav-item ms-lg-3 d-none d-lg-inline-block">
-            <a class="nav-link text-end {{ Request::is('/') ? 'active' : '' }}" aria-current="page" href="#">Home</a>
+            <a class="nav-link text-end {{ Request::is('/') ? 'active' : '' }}" aria-current="page" href="/home/">Home</a>
           </li>
           <li class="nav-item ms-lg-3 d-none d-lg-inline-block">
-            <a class="nav-link text-end {{ Request::is('/ruang-bantu') ? 'active' : '' }}" aria-current="page" href="/ruang-bantu">Ruang Bantu</a>
+            <a class="nav-link text-end {{ Request::is('/ruang-bantu') ? 'active' : '' }}" aria-current="page" href="/home/ruang-bantu">Ruang Bantu</a>
           </li>
           <li class="nav-item ms-lg-3 d-none d-lg-inline-block">
-            <a class="nav-link text-end {{ Request::is('/simpan') ? 'active' : '' }}" aria-current="page" href="/simpan">Simpan</a>
+            <a class="nav-link text-end {{ Request::is('/simpan') ? 'active' : '' }}" aria-current="page" href="/home/simpan">Simpan</a>
           </li>
           <li class="nav-item ms-lg-3 d-none d-lg-inline-block">
-            <a class="nav-link text-end {{ Request::is('/akun') }}" aria-current="page" href="/akun">Akun</a>
+            <a class="nav-link text-end {{ Request::is('/akun') }}" aria-current="page" href="/home/akun">Akun</a>
           </li>
             <li class="nav-item ms-lg-3">
                 <button class="btn bg-green" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
@@ -76,20 +76,16 @@
 {{-- small navigation --}}
 <div class="row small-navbar fixed-bottom bg-white justify-content-center d-lg-none">
     <div class="col text-center m-0 p-0 {{ Request::is('/') ? 'active' : '' }}">
-        <i class="fas fa-home d-block mb-1"></i>
-        <a class="small-link mx-3 d-inline-block" aria-current="page" href="#">Home</a>
+        <a class="small-link mx-3 d-inline-block" aria-current="page" href="#"><i class="fas fa-home d-block mb-1 fs-3"></i>Home</a>
     </div>
     <div class="col text-center m-0 p-0">
-        <i class="fas fa-heart d-block mb-1"></i>
-        <a class="small-link mx-3 d-inline-block {{ Request::is('/ruang-bantu') ? 'active' : '' }}" aria-current="page" href="/ruang-bantu">Ruang Bantu</a>
+        <a class="small-link mx-3 d-inline-block {{ Request::is('/ruang-bantu') ? 'active' : '' }}" aria-current="page" href="/home/ruang-bantu"><i class="fas fa-heart d-block mb-1 fs-3"></i>Ruang Bantu</a>
     </div>
     <div class="col text-center m-0 p-0">
-        <i class="fas fa-bookmark d-block mb-1"></i>
-        <a class="small-link mx-3 d-inline-block {{ Request::is('/simpan') ? 'active' : '' }}" aria-current="page" href="/simpan">Simpan</a>
+        <a class="small-link mx-3 d-inline-block {{ Request::is('/simpan') ? 'active' : '' }}" aria-current="page" href="/home/simpan"><i class="fas fa-bookmark d-block mb-1 fs-3"></i>Simpan</a>
     </div>
     <div class="col text-center m-0 p-0">
-        <i class="fas fa-user-circle d-block mb-1"></i>
-        <a class="small-link mx-3 d-inline-block {{ Request::is('/akun') }}" aria-current="page" href="/akun">Akun</a>
+        <a class="small-link mx-3 d-inline-block {{ Request::is('/akun') }}" aria-current="page" href="/home/akun"><i class="fas fa-user-circle d-block mb-1 fs-3"></i>Akun</a>
     </div>
 </div>
 {{-- end small navigation --}}
