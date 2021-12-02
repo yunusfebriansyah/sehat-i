@@ -17,7 +17,7 @@
   <body>
     @include('main-layout.partials.navbar-basic')
     <div class="container">
-        <a href="{{ url()->previous() }}" class="link-prev"><i class="fas fa-arrow-left me-2"></i> Kembali</a>
+        <a href="{{ url()->previous() }}" class="link-prev mb-5"><i class="fas fa-arrow-left me-2"></i> Kembali</a>
         @yield('container')
     </div>
 
