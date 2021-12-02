@@ -25,3 +25,9 @@ Route::get('/ruang-bantu', function () {
     ]);
 });
 
+Route::get('/simpan', function () {
+    return view('pages.simpan', [
+        'title' => 'Item Tersimpan'
+    ]);
+});
+

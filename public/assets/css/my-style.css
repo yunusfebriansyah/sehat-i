@@ -41,6 +41,7 @@ section{
     color: #000000;
 }
 
+
 h1, h2, h3, h4, h5, h6{
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
@@ -175,24 +176,24 @@ h2{
     background-color: #1ACEA3;
 }
 
-.kategori-kebutuhan .card.kontak-darurat{
+.card.kontak-darurat{
     border-radius: 12px;
 }
 
-.kategori-kebutuhan .card.kontak-darurat i{
+.card.kontak-darurat i{
     font-size: 8vh;
 }
 
-.kategori-kebutuhan .card.kontak-darurat .card-title{
+.card.kontak-darurat .card-title{
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
 }
 
-.kategori-kebutuhan .card.kontak-darurat .card-body{
+.card.kontak-darurat .card-body{
     border-radius: 12px;
 }
 
-.kategori-kebutuhan .card.kontak-darurat .card-title{
+.card.kontak-darurat .card-title{
     font-weight: 700;
 }
 
@@ -254,7 +255,28 @@ h2{
     padding: 10px 0;
 }
 
+/* simpan styles */
+.simpan .card .card-title{
+    font-weight: 500;
+}
 
+.simpan .card{
+    position: relative;
+}
+.simpan .card .verified{
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+a.text-green{
+    font-weight: 500;
+    color: #1ACEA3;
+}
+
+a.text-green:hover{
+    color: #1ACEA3;
+}
 
 
 

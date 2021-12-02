@@ -13,7 +13,7 @@
 
             <article class="mb-3 col-12 col-md-6 col-lg-4">
                 <a href="#">
-                    <div class="card border-0 shadow">
+                    <div class="card border-0 shadow bg-white">
                         <img src="https://source.unsplash.com/500x400/" class="card-img-top" alt="Artikel Donasi">
                         <h2 class="overlay-article">Bantuan {{ $i }}</h2>
                     </div>

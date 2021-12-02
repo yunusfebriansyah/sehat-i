@@ -110,10 +110,10 @@
         </a>
     </div>
     <div class="row">
-        <div class="col-12 col-lg-6 mb-3 bg-white mt-3">
-            <div class="card mb-3 border-0 shadow-lg p-2 kontak-darurat">
+        <div class="col-12 col-lg-6 bg-white my-3">
+            <div class="card border-0 bg-white shadow-lg p-2 kontak-darurat">
                 <div class="row g-0">
-                    <div class="col-3 d-flex align-items-center justify-content-center">
+                    <div class="col-3 bg-white d-flex align-items-center justify-content-center">
                         <i class="fas fa-house-user text-green"></i>
                     </div>
                     <div class="col-8">
@@ -126,10 +126,10 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 col-lg-6 mb-3 bg-white">
-            <div class="card mb-3 border-0 shadow-lg p-2 kontak-darurat">
+        <div class="col-12 col-lg-6 my-3 bg-white">
+            <div class="card border-0 bg-white shadow-lg p-2 kontak-darurat">
                 <div class="row g-0">
-                    <div class="col-3 d-flex align-items-center justify-content-center">
+                    <div class="col-3 bg-white d-flex align-items-center justify-content-center">
                         <i class="fas fa-address-card text-green"></i>
                     </div>
                     <div class="col-8">
