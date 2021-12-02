@@ -31,3 +31,9 @@ Route::get('/simpan', function () {
     ]);
 });
 
+Route::get('/kebutuhan/tips-isoma', function () {
+    return view('pages.tips-isoma', [
+        'title' => 'Panduan Isoma'
+    ]);
+});
+

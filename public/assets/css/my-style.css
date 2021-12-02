@@ -278,6 +278,16 @@ a.text-green:hover{
     color: #1ACEA3;
 }
 
+/* panduan isoma styles */
+section.tips-isoma{
+    margin-top: 0;
+}
+
+.tips-isoma .card.tips-item .card-title{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
 
 
 
