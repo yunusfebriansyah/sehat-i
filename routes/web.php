@@ -18,3 +18,9 @@ Route::get('/', function () {
         'title' => 'Home'
     ]);
 });
+
+Route::get('/simpan', function () {
+    return view('main-layout.main-non-navbar', [
+        'title' => 'Simpan'
+    ]);
+});

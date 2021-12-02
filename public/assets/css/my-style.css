@@ -7,6 +7,7 @@
 body{
     background-color: #fff;
     margin-top: 70px;
+    margin-bottom: 150px;
 }
 section{
     margin-top: 30px;
@@ -142,15 +143,56 @@ h2{
     font-size: 5vh;
 }
 
-.kategori-kebutuhan a{
+.kategori-kebutuhan .kebutuhan-item{
     color: #000000;
+    font-weight: 500;
+    transform: scale(1);
+    transition: .3s;
+}
+
+.kategori-kebutuhan .kebutuhan-item .card{
+    color: #1ACEA3;
+    background-color: #fff;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.kategori-kebutuhan .kebutuhan-item:hover{
+    font-weight: 700;
+    transform: scale(1.1);
+}
+
+.kategori-kebutuhan .kebutuhan-item p{
     font-weight: 500;
 }
 
-/* kontribusi styles */
-.kontribusi{
-    margin-bottom: 150px;
+.kategori-kebutuhan .kebutuhan-item:hover .card{
+    color: #fff;
+    background-color: #1ACEA3;
 }
+
+.kategori-kebutuhan .card.kontak-darurat{
+    border-radius: 12px;
+}
+
+.kategori-kebutuhan .card.kontak-darurat i{
+    font-size: 8vh;
+}
+
+.kategori-kebutuhan .card.kontak-darurat .card-title{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.kategori-kebutuhan .card.kontak-darurat .card-body{
+    border-radius: 12px;
+}
+
+.kategori-kebutuhan .card.kontak-darurat .card-title{
+    font-weight: 700;
+}
+
+/* kontribusi styles */
 .kontribusi .card{
     border-radius: 12px;
 }
@@ -181,6 +223,17 @@ h2{
     color: #1ACEA3;
 }
 
+/* link prev styles */
+.link-prev{
+    text-decoration: none;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 500;
+    color: #676767;
+}
+.link-prev:hover{
+    color: #676767;
+}
+
 
 
 
@@ -196,9 +249,9 @@ h2{
 
 /* responsive styles */
 @media (min-width: 992px) {
-    /* body{
-        margin-top: 100px;
-    } */
+    body{
+        margin-bottom: 50px;
+    }
     /* .navbar{
         position :fixed;
         top: 0;
