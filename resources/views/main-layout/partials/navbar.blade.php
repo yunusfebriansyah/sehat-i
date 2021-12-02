@@ -76,16 +76,16 @@
 {{-- small navigation --}}
 <div class="row small-navbar fixed-bottom bg-white justify-content-center d-lg-none">
     <div class="col text-center m-0 p-0 {{ Request::is('/') ? 'active' : '' }}">
-        <a class="small-link mx-3 d-inline-block" aria-current="page" href="#"><i class="fas fa-home d-block mb-1 fs-3"></i>Home</a>
+        <a class="small-link mx-3 d-inline-block" aria-current="page" href="#"><i class="fas fa-home d-block mb-1"></i>Home</a>
     </div>
     <div class="col text-center m-0 p-0">
-        <a class="small-link mx-3 d-inline-block {{ Request::is('/ruang-bantu') ? 'active' : '' }}" aria-current="page" href="/ruang-bantu"><i class="fas fa-heart d-block mb-1 fs-3"></i>Ruang Bantu</a>
+        <a class="small-link mx-3 d-inline-block {{ Request::is('/ruang-bantu') ? 'active' : '' }}" aria-current="page" href="/ruang-bantu"><i class="fas fa-heart d-block mb-1"></i>Ruang Bantu</a>
     </div>
     <div class="col text-center m-0 p-0">
-        <a class="small-link mx-3 d-inline-block {{ Request::is('/simpan') ? 'active' : '' }}" aria-current="page" href="/simpan"><i class="fas fa-bookmark d-block mb-1 fs-3"></i>Simpan</a>
+        <a class="small-link mx-3 d-inline-block {{ Request::is('/simpan') ? 'active' : '' }}" aria-current="page" href="/simpan"><i class="fas fa-bookmark d-block mb-1"></i>Simpan</a>
     </div>
     <div class="col text-center m-0 p-0">
-        <a class="small-link mx-3 d-inline-block {{ Request::is('/akun') }}" aria-current="page" href="/akun"><i class="fas fa-user-circle d-block mb-1 fs-3"></i>Akun</a>
+        <a class="small-link mx-3 d-inline-block {{ Request::is('/akun') }}" aria-current="page" href="/akun"><i class="fas fa-user-circle d-block mb-1"></i>Akun</a>
     </div>
 </div>
 {{-- end small navigation --}}

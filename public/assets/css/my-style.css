@@ -88,11 +88,15 @@ h2{
     padding: 20px 0;
 }
 
+.small-navbar .small-link i{
+    font-size: 30px;
+}
+
 .small-navbar .small-link{
     color: #676767;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 12px;
     transition: .3s;
 }
 
@@ -135,7 +139,7 @@ h2{
 }
 
 .kategori-kebutuhan .card i{
-    font-size: 3vh;
+    font-size: 5vh;
 }
 
 .kategori-kebutuhan a{
