@@ -114,13 +114,13 @@
             <div class="card border-0 bg-white shadow-lg p-2 kontak-darurat">
                 <div class="row g-0">
                     <div class="col-3 bg-white d-flex align-items-center justify-content-center">
-                        <i class="fas fa-house-user text-green"></i>
+                        <i class="fas fa-virus text-green"></i>
                     </div>
                     <div class="col-8">
                         <div class="card-body bg-white">
-                            <p class="card-title text-black fs-3">Tips Isoma</p>
-                            <p class="card-text text-gray">Pelajari tips isoma yang baik menurut kami</p>
-                            <a href="/kebutuhan/tips-isoma" class="btn bg-green text-white border-0">Pelajari sekarang</a>
+                            <p class="card-title text-black fs-3">Informasi COVID-19</p>
+                            <p class="card-text text-gray">Ketahui informasi mengenai COVID-19</p>
+                            <a href="/kebutuhan/info-covid" class="btn bg-green text-white border-0">Pelajari sekarang</a>
                         </div>
                     </div>
                 </div>
@@ -186,8 +186,8 @@
     <div class="card mb-3 border-0 shadow-lg bg-green panduan-isoma">
         <div class="row g-0">
             <div class="card-body bg-green py-4 px-5 text-center">
-                <h4 class="card-title text-white">Panduan Isolasi Mandiri</h4>
-                <a href="/kebutuhan/tips-isoma" class="btn-white rounded-pill">klik disini</a>
+                <h4 class="card-title text-white">Ketahui Informasi Mengenai COVID-19</h4>
+                <a href="/kebutuhan/info-covid" class="btn-white rounded-pill">klik disini</a>
             </div>
         </div>
     </div>

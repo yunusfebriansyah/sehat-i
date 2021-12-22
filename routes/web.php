@@ -32,9 +32,9 @@ Route::get('/simpan', function () {
     ]);
 });
 
-Route::get('/kebutuhan/tips-isoma', function () {
-    return view('pages.tips-isoma', [
-        'title' => 'Panduan Isoma'
+Route::get('/kebutuhan/info-covid', function () {
+    return view('pages.info-covid', [
+        'title' => 'Informasi Mengenai COVID-19'
     ]);
 });
 
