@@ -28,7 +28,7 @@
 <section class="kategori-kebutuhan" id="kategoriKebutuhan">
     <h2 class="mb-3">Kategori Kebutuhan</h2>
     <div class="row justify-content-center">
-        <a href="/kebutuhan?r=oksigen" class="col-6 col-md-3 kebutuhan-item">
+        <a href="/kebutuhan/oksigen" class="col-6 col-md-3 kebutuhan-item">
             <div class="text-center">
                 <div class="card border-0 mb-2 shadow">
                     <div class="card-body">
@@ -38,7 +38,7 @@
                 <p>Oksigen</p>
             </div>
         </a>
-        <a href="/kebutuhan?r=ambulans" class="col-6 col-md-3 kebutuhan-item">
+        <a href="/kebutuhan/ambulans" class="col-6 col-md-3 kebutuhan-item">
             <div class="text-center">
                 <div class="card border-0 mb-2 shadow">
                     <div class="card-body">
@@ -48,7 +48,7 @@
                 <p>Ambulans</p>
             </div>
         </a>
-        <a href="/kebutuhan?r=plasma" class="col-6 col-md-3 kebutuhan-item">
+        <a href="/kebutuhan/plasma" class="col-6 col-md-3 kebutuhan-item">
             <div class="text-center">
                 <div class="card border-0 mb-2 shadow">
                     <div class="card-body">
@@ -58,7 +58,7 @@
                 <p>Plasma</p>
             </div>
         </a>
-        <a href="/kebutuhan?r=puskesmas" class="col-6 col-md-3 kebutuhan-item">
+        <a href="/kebutuhan/puskesmas" class="col-6 col-md-3 kebutuhan-item">
             <div class="text-center">
                 <div class="card border-0 mb-2 shadow">
                     <div class="card-body">
@@ -68,7 +68,7 @@
                 <p>Puskesmas</p>
             </div>
         </a>
-        <a href="/kebutuhan?r=swab" class="col-6 col-md-3 kebutuhan-item">
+        <a href="/kebutuhan/swab" class="col-6 col-md-3 kebutuhan-item">
             <div class="text-center">
                 <div class="card border-0 mb-2 shadow">
                     <div class="card-body">
@@ -78,7 +78,7 @@
                 <p>Test Swab</p>
             </div>
         </a>
-        <a href="/kebutuhan?r=vaksin" class="col-6 col-md-3 kebutuhan-item">
+        <a href="/kebutuhan/vaksin" class="col-6 col-md-3 kebutuhan-item">
             <div class="text-center">
                 <div class="card border-0 mb-2 shadow">
                     <div class="card-body">
@@ -88,7 +88,7 @@
                 <p>Tempat Vaksin</p>
             </div>
         </a>
-        <a href="/kebutuhan?r=isolasi" class="col-6 col-md-3 kebutuhan-item">
+        <a href="/kebutuhan/isolasi" class="col-6 col-md-3 kebutuhan-item">
             <div class="text-center">
                 <div class="card border-0 mb-2 shadow">
                     <div class="card-body">
@@ -98,7 +98,7 @@
                 <p>Tempat Isolasi</p>
             </div>
         </a>
-        <a href="/kebutuhan/kontak" class="col-6 col-md-3 kebutuhan-item">
+        <a href="https://www.halodoc.com/tanya-dokter" target="_blank" class="col-6 col-md-3 kebutuhan-item">
             <div class="text-center">
                 <div class="card border-0 mb-2 shadow">
                     <div class="card-body">
@@ -136,7 +136,7 @@
                         <div class="card-body bg-white">
                             <p class="card-title text-black fs-3">Kontak Darurat</p>
                             <p class="card-text text-gray">Situs & kontak penting terkait COVID-19</p>
-                            <a href="/kebutuhan/kontak-darurat" class="btn bg-green text-white border-0">Kontak sekarang</a>
+                            <a href="https://www.halodoc.com/tanya-dokter" target="_blank" class="btn bg-green text-white border-0">Kontak sekarang</a>
                         </div>
                     </div>
                 </div>
@@ -160,7 +160,7 @@
                     <div class="card-body bg-white">
                         <p class="card-title text-black fs-5">Daftar Donor Darah</p>
                         <p class="card-text text-gray">Berdonor darah plasma konvalesan (hanya diisi oleh calon pendonor).</p>
-                        <a href="/kontribusi/donor-darah" class="btn bg-green text-white border-0">Donor darah sekarang</a>
+                        <a href="http://ayodonor.pmi.or.id/about.php" target="_blank" class="btn bg-green text-white border-0">Donor darah sekarang</a>
                     </div>
                   </div>
                 </div>
@@ -176,7 +176,7 @@
                     <div class="card-body bg-white">
                         <p class="card-title text-black fs-5">Daftar Jadi Relawan</p>
                         <p class="card-text text-gray">Gabung jadi relawan untuk mengumpulkan data dan menjawab pertanyaan warga via hotline.</p>
-                        <a href="/kontribusi/jadi-relawan" class="btn bg-green text-white border-0">Jadi relawan sekarang</a>
+                        <a href="https://sim.deskrelawanpb.bnpb.go.id/daftar-relawan" target="_blank" class="btn bg-green text-white border-0">Jadi relawan sekarang</a>
                     </div>
                   </div>
                 </div>

@@ -289,11 +289,20 @@ section.tips-isoma{
     font-weight: 700;
 }
 
+.pagination .page-item.active .page-link{
+    background-color: #1ACEA3 !important;
+    border-color: #1ACEA3 !important;
+    color: #fff
+}
 
+.pagination .page-item .page-link{
+    color: #1ACEA3;
+}
 
-
-
-
+.btn.btn-sm.btn-success{
+    background-color: #1ACEA3;
+    border-color: #1ACEA3;
+}
 
 
 

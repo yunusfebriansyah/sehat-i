@@ -1,7 +1,13 @@
 <?php
 
+use App\Models\Ambulance;
+use App\Models\Isolasi;
+use App\Models\Oxygen;
+use App\Models\Plasma;
+use App\Models\Puskes;
+use App\Models\Swap;
+use App\Models\Vaksin;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,10 +44,60 @@ Route::get('/kebutuhan/info-covid', function () {
     ]);
 });
 
-Route::get('/kebutuhan', function (Request $request) {
-    return view('pages.kebutuhan', [
-        'title' => "Kebutuhan $request",
-        'request' => $request
+Route::get('/kebutuhan/oksigen', function () {
+    return view('pages.konten-kebutuhan', [
+        'title' => "Kebutuhan Oksigen",
+        'heading' => "Oksigen",
+        'items' => Oxygen::paginate(15)
     ]);
 });
+
+Route::get('/kebutuhan/ambulans', function () {
+    return view('pages.konten-kebutuhan', [
+        'title' => "Kebutuhan Ambulans",
+        'heading' => "Ambulans",
+        'items' => Ambulance::paginate(15)
+    ]);
+});
+
+Route::get('/kebutuhan/plasma', function () {
+    return view('pages.konten-kebutuhan', [
+        'title' => "Kebutuhan Plasma",
+        'heading' => "Plasma",
+        'items' => Plasma::paginate(15)
+    ]);
+});
+
+Route::get('/kebutuhan/puskesmas', function () {
+    return view('pages.konten-kebutuhan', [
+        'title' => "Kebutuhan Puskesmas",
+        'heading' => "Puskesmas",
+        'items' => Puskes::paginate(15)
+    ]);
+});
+
+Route::get('/kebutuhan/swab', function () {
+    return view('pages.konten-kebutuhan', [
+        'title' => "Kebutuhan Swap",
+        'heading' => "Swap",
+        'items' => Swap::paginate(15)
+    ]);
+});
+
+Route::get('/kebutuhan/vaksin', function () {
+    return view('pages.konten-kebutuhan', [
+        'title' => "Kebutuhan Vaksin",
+        'heading' => "Vaksin",
+        'items' => Vaksin::paginate(15)
+    ]);
+});
+
+Route::get('/kebutuhan/isolasi', function () {
+    return view('pages.konten-kebutuhan', [
+        'title' => "Kebutuhan Isolasi",
+        'heading' => "Isolasi",
+        'items' => Isolasi::paginate(15)
+    ]);
+});
+
 
