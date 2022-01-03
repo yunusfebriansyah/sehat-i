@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\RuangBantuController;
 use App\Models\Ambulance;
 use App\Models\Isolasi;
 use App\Models\Oxygen;
@@ -26,11 +28,8 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/ruang-bantu', function () {
-    return view('pages.ruang-bantu', [
-        'title' => 'Ruang Bantu'
-    ]);
-});
+Route::post('/ruang-bantu/{ruang_bantu:slug}/comment', [RuangBantuController::class, 'comment'])->middleware('auth');
+Route::resource('/ruang-bantu', RuangBantuController::class);
 
 Route::get('/simpan', function () {
     return view('pages.simpan', [
@@ -100,4 +99,26 @@ Route::get('/kebutuhan/isolasi', function () {
     ]);
 });
 
+Route::get('/akun', function () {
+    return view('pages.akun', [
+        'title' => "Profile " . auth()->user()->nama
+    ]);
+})->middleware('auth');
 
+Route::get('/login', function(){
+    return view('pages.login', [
+        'title' => "Login"
+    ]);
+})->name('login')->middleware('guest');
+
+Route::post('/login', [AuthController::class, 'login'])->middleware('guest');
+
+Route::get('/register', function(){
+    return view('pages.register', [
+        'title' => "Registrasi"
+    ]);
+})->middleware('guest');
+
+Route::post('/register', [AuthController::class, 'register'])->middleware('guest');
+
+Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth');

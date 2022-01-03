@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use App\Models\RuangBantu;
+use App\Models\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 
 class AuthServiceProvider extends ServiceProvider
@@ -26,5 +29,13 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         //
+        Gate::define('my_content', function (User $user, RuangBantu $ruangBantu) {
+            return Auth::check() && $user->id === $ruangBantu->user_id;
+        });
+
+        Gate::define('auth', function () {
+            return Auth::check();
+        });
+
     }
 }

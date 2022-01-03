@@ -252,8 +252,25 @@ h2{
     bottom: -12px;
     left: 0;
     right: 0;
-    text-align: center;
-    padding: 10px 0;
+    padding: 10px;
+    padding-right: 20px;
+}
+
+.ruang-bantu .card .dropdown-toggle::after {
+    content: none;
+}
+
+.ruang-bantu .card .more-overlay{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.ruang-bantu .card .more-overlay .btn.more-action{
+    background-color: transparent;
+    color: #fff;
+    border-radius: 0;
+    padding:5px 10px;
 }
 
 /* simpan styles */
@@ -302,6 +319,15 @@ section.tips-isoma{
 .btn.btn-sm.btn-success{
     background-color: #1ACEA3;
     border-color: #1ACEA3;
+}
+
+img.user-photo{
+    max-width: 200px;
+}
+
+
+.comments .card, .comments .card .card-body{
+    border-radius: 0 !important;
 }
 
 
