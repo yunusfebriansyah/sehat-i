@@ -35,7 +35,7 @@ Route::get('/simpan', function () {
     return view('pages.simpan', [
         'title' => 'Item Tersimpan'
     ]);
-});
+})->middleware('auth');
 
 Route::get('/kebutuhan/info-covid', function () {
     return view('pages.info-covid', [

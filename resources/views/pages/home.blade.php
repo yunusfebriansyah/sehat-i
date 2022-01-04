@@ -8,7 +8,9 @@
 <section class="banner" id="banner">
     <div class="welcome">
         <span class="d-block f-bold fs-1">Hello!</span>
-        <p class="text-gray">Verdian Galang Pratama</p>
+        @can('auth')
+            <p class="text-gray">{{ auth()->user()->nama }}</p>
+        @endcan
     </div>
     <div class="card bg-dark text-white border-0">
         {{-- <img src="https://source.unsplash.com/1200x400/?doctor" class="card-img img-fluid rounded" alt="banner"> --}}
@@ -32,7 +34,7 @@
             <div class="text-center">
                 <div class="card border-0 mb-2 shadow">
                     <div class="card-body">
-                        <i class="fas fa-user-circle d-block mb-1"></i>
+                        <i class="fas fa-lungs d-block mb-1"></i>
                     </div>
                 </div>
                 <p>Oksigen</p>
