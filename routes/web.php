@@ -2,13 +2,9 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RuangBantuController;
-use App\Models\Ambulance;
-use App\Models\Isolasi;
-use App\Models\Oxygen;
-use App\Models\Plasma;
-use App\Models\Puskes;
-use App\Models\Swap;
-use App\Models\Vaksin;
+use App\Http\Controllers\SaveController;
+use App\Models\Category;
+use App\Models\Need;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,11 +27,17 @@ Route::get('/', function () {
 Route::post('/ruang-bantu/{ruang_bantu:slug}/comment', [RuangBantuController::class, 'comment'])->middleware('auth');
 Route::resource('/ruang-bantu', RuangBantuController::class);
 
-Route::get('/simpan', function () {
-    return view('pages.simpan', [
-        'title' => 'Item Tersimpan'
+Route::get('/simpan', [SaveController::class, 'index'])->middleware('auth');
+Route::post('/simpan/{need:slug}', [SaveController::class, 'store'])->middleware('auth');
+Route::delete('/simpan/{save:id}', [SaveController::class, 'destroy'])->middleware('auth');
+
+Route::get('/kebutuhan/{category:slug}', function (Category $category) {
+    return view('pages.konten-kebutuhan', [
+        'title' => "Kebutuhan " . $category->name,
+        'heading' => $category->name,
+        'items' => Need::where('category_id', $category->id)->search(request('search'))->location(request('lokasi'))->where('is_verified', true)->paginate(15)->withQueryString()
     ]);
-})->middleware('auth');
+});
 
 Route::get('/kebutuhan/info-covid', function () {
     return view('pages.info-covid', [
@@ -43,61 +45,6 @@ Route::get('/kebutuhan/info-covid', function () {
     ]);
 });
 
-Route::get('/kebutuhan/oksigen', function () {
-    return view('pages.konten-kebutuhan', [
-        'title' => "Kebutuhan Oksigen",
-        'heading' => "Oksigen",
-        'items' => Oxygen::paginate(15)
-    ]);
-});
-
-Route::get('/kebutuhan/ambulans', function () {
-    return view('pages.konten-kebutuhan', [
-        'title' => "Kebutuhan Ambulans",
-        'heading' => "Ambulans",
-        'items' => Ambulance::paginate(15)
-    ]);
-});
-
-Route::get('/kebutuhan/plasma', function () {
-    return view('pages.konten-kebutuhan', [
-        'title' => "Kebutuhan Plasma",
-        'heading' => "Plasma",
-        'items' => Plasma::paginate(15)
-    ]);
-});
-
-Route::get('/kebutuhan/puskesmas', function () {
-    return view('pages.konten-kebutuhan', [
-        'title' => "Kebutuhan Puskesmas",
-        'heading' => "Puskesmas",
-        'items' => Puskes::paginate(15)
-    ]);
-});
-
-Route::get('/kebutuhan/swab', function () {
-    return view('pages.konten-kebutuhan', [
-        'title' => "Kebutuhan Swap",
-        'heading' => "Swap",
-        'items' => Swap::paginate(15)
-    ]);
-});
-
-Route::get('/kebutuhan/vaksin', function () {
-    return view('pages.konten-kebutuhan', [
-        'title' => "Kebutuhan Vaksin",
-        'heading' => "Vaksin",
-        'items' => Vaksin::paginate(15)
-    ]);
-});
-
-Route::get('/kebutuhan/isolasi', function () {
-    return view('pages.konten-kebutuhan', [
-        'title' => "Kebutuhan Isolasi",
-        'heading' => "Isolasi",
-        'items' => Isolasi::paginate(15)
-    ]);
-});
 
 Route::get('/akun', function () {
     return view('pages.akun', [

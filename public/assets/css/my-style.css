@@ -274,14 +274,15 @@ h2{
 }
 
 /* simpan styles */
-.simpan .card .card-title{
-    font-weight: 500;
-}
+/* .konten .card .card-title, .simpan .card .card-title{
+    font-weight: 600;
+} */
 
-.simpan .card{
+.konten .card, .simpan .card{
     position: relative;
 }
-.simpan .card .verified{
+
+.konten .card .verified, .simpan .card .verified{
     position: absolute;
     top: 12px;
     right: 12px;

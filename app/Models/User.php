@@ -41,4 +41,12 @@ class User extends Authenticatable
         return $this->hasMany(Comment::class);
     }
 
+    public function need(){
+        return $this->hasMany(Need::class);
+    }
+
+    public function saveItem(){
+        return $this->hasMany(Save::class, 'id');
+    }
+
 }

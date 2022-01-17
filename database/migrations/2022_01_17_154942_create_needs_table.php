@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAmbulancesTable extends Migration
+class CreateNeedsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,15 @@ class CreateAmbulancesTable extends Migration
      */
     public function up()
     {
-        Schema::create('ambulances', function (Blueprint $table) {
+        Schema::create('needs', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->integer('jumlah');
-            $table->text('alamat');
+            $table->foreignId('user_id');
+            $table->foreignId('category_id');
+            $table->string('slug')->unique();
+            $table->string('name');
+            $table->text('address');
             $table->string('hp');
+            $table->boolean('is_verified')->default(false);
             $table->timestamps();
         });
     }
@@ -30,6 +33,6 @@ class CreateAmbulancesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ambulances');
+        Schema::dropIfExists('needs');
     }
 }

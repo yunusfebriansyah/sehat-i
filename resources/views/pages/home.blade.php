@@ -70,7 +70,7 @@
                 <p>Puskesmas</p>
             </div>
         </a>
-        <a href="/kebutuhan/swab" class="col-6 col-md-3 kebutuhan-item">
+        <a href="/kebutuhan/test-swap" class="col-6 col-md-3 kebutuhan-item">
             <div class="text-center">
                 <div class="card border-0 mb-2 shadow">
                     <div class="card-body">
@@ -80,7 +80,7 @@
                 <p>Test Swab</p>
             </div>
         </a>
-        <a href="/kebutuhan/vaksin" class="col-6 col-md-3 kebutuhan-item">
+        <a href="/kebutuhan/tempat-vaksin" class="col-6 col-md-3 kebutuhan-item">
             <div class="text-center">
                 <div class="card border-0 mb-2 shadow">
                     <div class="card-body">
@@ -90,7 +90,7 @@
                 <p>Tempat Vaksin</p>
             </div>
         </a>
-        <a href="/kebutuhan/isolasi" class="col-6 col-md-3 kebutuhan-item">
+        <a href="/kebutuhan/tempat-isolasi" class="col-6 col-md-3 kebutuhan-item">
             <div class="text-center">
                 <div class="card border-0 mb-2 shadow">
                     <div class="card-body">

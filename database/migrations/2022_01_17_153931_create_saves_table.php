@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOxygensTable extends Migration
+class CreateSavesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateOxygensTable extends Migration
      */
     public function up()
     {
-        Schema::create('oxygens', function (Blueprint $table) {
+        Schema::create('saves', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->text('alamat');
-            $table->string('hp');
+            $table->foreignId('user_id');
+            $table->foreignId('need_id');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateOxygensTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('oxygens');
+        Schema::dropIfExists('saves');
     }
 }

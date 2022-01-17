@@ -33,6 +33,10 @@ class AuthServiceProvider extends ServiceProvider
             return Auth::check() && $user->id === $ruangBantu->user_id;
         });
 
+        Gate::define('is_admin', function (User $user) {
+            return Auth::check() && $user->is_admin;
+        });
+
         Gate::define('auth', function () {
             return Auth::check();
         });

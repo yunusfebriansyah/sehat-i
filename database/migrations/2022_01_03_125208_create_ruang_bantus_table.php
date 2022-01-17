@@ -20,6 +20,7 @@ class CreateRuangBantusTable extends Migration
             $table->string('slug')->unique();
             $table->string('photo');
             $table->text('description');
+            $table->boolean('is_verified')->default(false);
             $table->timestamps();
         });
     }
