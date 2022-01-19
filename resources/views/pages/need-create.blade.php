@@ -10,7 +10,7 @@
         <div class="col-12 col-md-10 col-lg-8">
             <div class="card border-0 shadow">
                 <div class="card-body">
-                    <form action="/kontribusi" method="post" enctype="multipart/form-data">
+                    <form action="/kontribusi" method="post">
                         @csrf
                         <div class="mb-3">
                             <label for="name" class="form-label">Nama Penyedia</label>

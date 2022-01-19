@@ -149,7 +149,7 @@ class NeedController extends Controller
     {
         $need = Need::firstWhere('slug', $need);
 
-        if (! Gate::allows('my_need', $need)) {
+        if (! Gate::allows('my_need', $need) || ! Gate::allows('is_admin') ) {
             abort(403);
         }
 

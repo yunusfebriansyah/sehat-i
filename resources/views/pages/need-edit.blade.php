@@ -10,7 +10,7 @@
         <div class="col-12 col-md-10 col-lg-8">
             <div class="card border-0 shadow">
                 <div class="card-body">
-                    <form action="/kontribusi/{{ $need->slug }}" method="post" enctype="multipart/form-data">
+                    <form action="/kontribusi/{{ $need->slug }}" method="post">
                         @csrf
                         @method('put')
                         <div class="mb-3">

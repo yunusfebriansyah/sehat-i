@@ -13,12 +13,10 @@
         @endcan
     </div>
     <div class="card bg-dark text-white border-0">
-        {{-- <img src="https://source.unsplash.com/1200x400/?doctor" class="card-img img-fluid rounded" alt="banner"> --}}
-        {{-- <div class="card-img-overlay d-flex align-items-center"> --}}
-        <div class="card-body bg-green rounded py-5">
-            <div class="ps-3">
+        <div class="card-body rounded p-0 py-5 hero">
+            <div class="px-5">
                 <h1 class="card-title text-white">Sehat.i</h1>
-                <p class="card-text text-white">Gotong Royong Saling Bantu Sesama</p>
+                <p class="card-text text-white">#SalingPeduliUntukEmpati</p>
             </div>
         </div>
     </div>

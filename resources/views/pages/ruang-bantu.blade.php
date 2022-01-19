@@ -39,6 +39,21 @@
                                 </li>
                             </ul>
                         </div>
+                        @elsecan('is_admin')
+                        <div class="dropdown more-overlay">
+                            <a class="btn dropdown-toggle more-action" href="#" role="button" id="moreAction" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="moreAction">
+                                <li>
+                                    <form action="/ruang-bantu/{{ $post->slug }}" method="post">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit" class="dropdown-item" onclick="return confirm('yakin?')">Hapus</button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
                         @endcan
                     </div>
                 </a>

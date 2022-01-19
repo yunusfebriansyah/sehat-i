@@ -57,6 +57,9 @@ Route::get('/akun', function () {
     ]);
 })->middleware('auth');
 
+Route::get('/akun/ganti-password', [AuthController::class, 'gantiPassword'] )->middleware('auth');
+Route::put('/akun/ganti-password', [AuthController::class, 'validatePassword'] )->middleware('auth');
+
 Route::get('/login', function(){
     return view('pages.login', [
         'title' => "Login"

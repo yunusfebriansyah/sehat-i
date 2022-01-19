@@ -158,7 +158,7 @@ class RuangBantuController extends Controller
      */
     public function destroy(RuangBantu $ruangBantu)
     {
-        if (! Gate::allows('my_content', $ruangBantu)) {
+        if (! Gate::allows('my_content', $ruangBantu) || ! Gate::allows('is_admin') ) {
             abort(403);
         }
 

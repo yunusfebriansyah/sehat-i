@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -56,6 +57,37 @@ class AuthController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/');
+    }
+
+    public function gantiPassword()
+    {
+        return view('pages.ganti-password', [
+            'title' => "Ganti Password " . auth()->user()->nama
+        ]);
+    }
+
+    public function validatePassword( Request $request )
+    {
+        $validated = $request->validate([
+            'old_password' => 'required|min:8|max:255',
+            'new_password' => 'required|min:8|max:255',
+            'confirm_password' => 'same:new_password'
+        ]);
+
+        if (!Hash::check($validated['old_password'], User::firstWhere('id', Auth::user()->id)->password )) :
+            // The passwords not match...
+            return redirect('/akun/ganti-password')->with('message', '<div class="alert alert-danger alert-dismissible fade show mb-3" role="alert">
+            Password <strong>gagal diganti!</strong> Pastikan semua data password benar
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>');
+        else :
+            User::where('id', Auth::user()->id)->update(['password' => bcrypt($validated['new_password'])]);
+            return redirect('/akun')->with('message', '<div class="alert bg-green text-white alert-dismissible fade show mb-3" role="alert">
+            Password <strong>berhasil diganti!</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>');
+        endif;
+
     }
 
 
