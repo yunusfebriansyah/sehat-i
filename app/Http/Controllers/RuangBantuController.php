@@ -188,7 +188,7 @@ class RuangBantuController extends Controller
 
         Comment::create($validated);
 
-        return redirect("/kontribusi/$ruangBantu->slug")->with('message', '<div class="alert bg-green text-white alert-dismissible fade show mb-3" role="alert">
+        return redirect("/ruang-bantu/$ruangBantu->slug")->with('message', '<div class="alert bg-green text-white alert-dismissible fade show mb-3" role="alert">
         Komentar <strong>berhasil dikirim</strong>.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>');

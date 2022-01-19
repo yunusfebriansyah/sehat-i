@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" href="/assets/css/my-style.css">
     <link rel="stylesheet" href="/assets/fontawesome/css/all.min.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   </head>
   <body>

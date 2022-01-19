@@ -12,7 +12,7 @@
             <form action="" method="get">
                 <div class="input-group rounded-pill shadow-sm overflow-hidden">
                     <input type="text" class="form-control border-0" name="search" placeholder="Cari info terkait" value="{{ request('search') }}">
-                    <select name="lokasi" class="form-select border-0 border-start" style="max-width: 200px;">
+                    <select name="lokasi" class="form-select border-0 border-start" style="max-width: 120px;">
                         <option value="" {{ request('lokasi') == '' ? 'selected' : '' }}>Semua</option>
                         <option value="bandar lampung" {{ request('lokasi') == 'bandar lampung' ? 'selected' : '' }}>Bandar Lampung</option>
                         <option value="metro" {{ request('lokasi') == 'metro' ? 'selected' : '' }}>Metro</option>
