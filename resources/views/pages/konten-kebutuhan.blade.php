@@ -35,7 +35,7 @@
         </div>
     </div>
 
-    <a href="/need/create" class="btn bg-green text-white px-4">Ajukan Penyedia</a>
+    <a href="/kontribusi/create" class="btn bg-green text-white px-4 mb-3">Ajukan Penyedia</a>
 
     @if (session('notif'))
         {!! session('notif') !!}
@@ -50,7 +50,7 @@
                 <div class="card border-0 bg-white shadow p-2 tips-item mb-3">
                     <div class="card-body bg-white">
                         <h5 class="card-title mt-3">{{ $item->name }}</h5>
-                        <span class="verified text-gray">Terverifikasi <i class="fas fa-check-circle text-green ms-2"></i></span>
+                        <span class="verified text-gray me-4">Terverifikasi <i class="fas fa-check-circle text-green ms-2"></i></span>
                         <p class="card-text text-muted">{{ $title }}</p>
                         <span class="card-text text-muted"><i class="fas fa-phone text-green"></i> {{ $item->hp }} </span>
                         <button type="button" class="btn btn-sm btn-success ms-4 button_salin" onclick="alert('Kontak berhasil disalin.')">Salin</button>
@@ -61,6 +61,38 @@
                             <button type="submit" class="btn btn-sm btn-success">Simpan <i class="fas fa-save"></i></button></p>
                         </form>
                         @endauth
+                        @can('my_need', $item)
+                        <div class="dropdown need-overlay">
+                            <a class="btn dropdown-toggle need-action" href="#" role="button" id="needAction" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="needAction">
+                                <li><a class="dropdown-item" href="/kontribusi/{{ $item->slug }}/edit">Ubah</a></li>
+                                <li>
+                                    <form action="/kontribusi/{{ $item->slug }}" method="post">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit" class="dropdown-item" onclick="return confirm('yakin dihapus?')">Hapus</button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                        @elsecan('is_admin')
+                        <div class="dropdown need-overlay">
+                            <a class="btn dropdown-toggle need-action" href="#" role="button" id="needAction" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="needAction">
+                                <li>
+                                    <form action="/kontribusi/{{ $item->slug }}" method="post">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit" class="dropdown-item" onclick="return confirm('yakin dihapus?')">Hapus</button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                        @endcan
                     </div>
                 </div>
             </div>

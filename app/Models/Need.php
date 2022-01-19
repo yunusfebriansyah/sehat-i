@@ -2,15 +2,15 @@
 
 namespace App\Models;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Need extends Model
 {
-    use HasFactory;
+    use HasFactory, Sluggable;
+    
     protected $guarded = ['id'];
-
-
 
     public function getRouteKeyName()
     {
@@ -25,11 +25,6 @@ class Need extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
-    }
-
-    public function need()
-    {
-        return $this->hasMany(Need::class);
     }
 
     public function scopeSearch($query, $search)
@@ -52,7 +47,7 @@ class Need extends Model
     {
         return [
             'slug' => [
-                'source' => 'nama'
+                'source' => 'name'
             ]
         ];
     }

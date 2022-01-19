@@ -12,7 +12,21 @@
             <div class="card border-0">
                 <img src="{{ asset($post->photo) }}" class="card-img-top" alt="{{ $post->title }}">
                 <div class="card-body px-0">
-                  <h1 class="card-title fs-4 mb-1">{{ $post->title }}</h1>
+                    @can('my_content', $post)
+                    <a class="btn btn-sm btn-success px-4" href="/ruang-bantu/{{ $post->slug }}/edit">Ubah</a>
+                    <form action="/ruang-bantu/{{ $post->slug }}" method="post" class="d-inline-block">
+                        @csrf
+                        @method('delete')
+                        <button type="submit" class="btn btn-sm btn-danger px-4" onclick="return confirm('yakin dihapus?')">Hapus</button>
+                    </form>
+                    @elsecan('is_admin')
+                    <form action="/ruang-bantu/{{ $post->slug }}" method="post" class="d-inline-block">
+                        @csrf
+                        @method('delete')
+                        <button type="submit" class="btn btn-sm btn-danger px-4" onclick="return confirm('yakin dihapus?')">Hapus</button>
+                    </form>
+                    @endcan
+                  <h1 class="card-title fs-4 mb-1 mt-2">{{ $post->title }}</h1>
                   <small class="text-muted">{{ $post->created_at->diffForHumans() }}</small>
                   <p class="card-text my-1">Pengaju : {{ $post->user->nama }}</p>
                   {!! $post->description !!}

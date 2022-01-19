@@ -13,6 +13,9 @@
             <a class="nav-link text-end {{ Request::is('ruang-bantu*') ? 'active' : '' }}" href="/ruang-bantu">Ruang Bantu</a>
           </li>
           <li class="nav-item ms-lg-3 d-none d-lg-inline-block">
+            <a class="nav-link text-end {{ Request::is('kontribusi*') ? 'active' : '' }}" href="/kontribusi">Kontribusi</a>
+          </li>
+          <li class="nav-item ms-lg-3 d-none d-lg-inline-block">
             <a class="nav-link text-end {{ Request::is('simpan') ? 'active' : '' }}" href="/simpan">Simpan</a>
           </li>
           @guest
@@ -94,6 +97,9 @@
     </div>
     <div class="col text-center m-0 p-0">
         <a class="small-link mx-2 d-inline-block {{ Request::is('ruang-bantu*') ? 'active' : '' }}" href="/ruang-bantu"><i class="fas fa-heart d-block mb-1"></i>Ruang Bantu</a>
+    </div>
+    <div class="col text-center m-0 p-0">
+        <a class="small-link mx-2 d-inline-block {{ Request::is('kontribusi*') ? 'active' : '' }}" href="/kontribusi"><i class="fas fa-hand-holding-medical d-block mb-1"></i>Kontribusi</a>
     </div>
     <div class="col text-center m-0 p-0">
         <a class="small-link mx-2 d-inline-block {{ Request::is('simpan') ? 'active' : '' }}" href="/simpan"><i class="fas fa-bookmark d-block mb-1"></i>Simpan</a>

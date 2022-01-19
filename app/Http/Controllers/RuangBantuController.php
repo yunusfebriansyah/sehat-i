@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Comment;
 use App\Models\RuangBantu;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Storage;
 
@@ -21,7 +21,7 @@ class RuangBantuController extends Controller
     {
         return view('pages.ruang-bantu', [
             'title' => 'Ruang Bantu',
-            'posts' => RuangBantu::all()
+            'posts' => RuangBantu::where('is_verified', true)->orderBy('id', 'desc')->get()
         ]);
     }
 
@@ -63,9 +63,13 @@ class RuangBantuController extends Controller
         $validated['photo'] = $request->file('photo')->store('forum-photos');
         $validated['user_id'] = auth()->user()->id;
 
+        if( Auth::user()->is_admin ) :
+            $validated['is_verified'] = true;
+        endif;
+
         RuangBantu::create($validated);
 
-        return redirect('/ruang-bantu')->with('message', '<div class="alert bg-green text-white alert-dismissible fade show mb-3" role="alert">
+        return redirect('/kontribusi')->with('message', '<div class="alert bg-green text-white alert-dismissible fade show mb-3" role="alert">
         Postingan <strong>berhasil dibuat</strong>.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>');
@@ -133,9 +137,13 @@ class RuangBantuController extends Controller
             $validated['photo'] = $ruangBantu->photo;
         endif;
 
+        if( !Auth::user()->is_admin ) :
+            $validated['is_verified'] = false;
+        endif;
+
         RuangBantu::where('id', $ruangBantu->id)->update($validated);
 
-        return redirect('/ruang-bantu')->with('message', '<div class="alert bg-green text-white alert-dismissible fade show mb-3" role="alert">
+        return redirect('/kontribusi')->with('message', '<div class="alert bg-green text-white alert-dismissible fade show mb-3" role="alert">
         Postingan <strong>berhasil diubah</strong>.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>');
@@ -158,7 +166,7 @@ class RuangBantuController extends Controller
 
         $ruangBantu->delete();
 
-        return redirect('/ruang-bantu')->with('message', '<div class="alert bg-green text-white alert-dismissible fade show mb-3" role="alert">
+        return redirect('/kontribusi')->with('message', '<div class="alert bg-green text-white alert-dismissible fade show mb-3" role="alert">
         Postingan <strong>Berhasil dihapus</strong>.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>');
@@ -180,8 +188,18 @@ class RuangBantuController extends Controller
 
         Comment::create($validated);
 
-        return redirect("/ruang-bantu/$ruangBantu->slug")->with('message', '<div class="alert bg-green text-white alert-dismissible fade show mb-3" role="alert">
+        return redirect("/kontribusi/$ruangBantu->slug")->with('message', '<div class="alert bg-green text-white alert-dismissible fade show mb-3" role="alert">
         Komentar <strong>berhasil dikirim</strong>.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>');
+    }
+
+    public function verified ( RuangBantu $ruangBantu )
+    {
+        RuangBantu::where('id', $ruangBantu->id)->update(['is_verified' => true]);
+
+        return redirect('/kontribusi')->with('message', '<div class="alert bg-green text-white alert-dismissible fade show mb-3" role="alert">
+        Postingan ruang bantu <strong>berhasil diverifikasi</strong>.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>');
     }

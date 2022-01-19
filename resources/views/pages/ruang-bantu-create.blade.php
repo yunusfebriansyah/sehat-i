@@ -23,7 +23,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="description" class="form-label">Deskripsi</label>
-                            <textarea class="form-control @error('description') is-invalid @enderror" placeholder="Isi deskripsi" name="description"id="editor" value="{{ old('description')}}"></textarea>
+                            <textarea class="form-control @error('description') is-invalid @enderror" placeholder="Isi deskripsi" name="description"id="editor">{{ old('description')}}</textarea>
                             @error('description')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -41,7 +41,7 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <button class="btn bg-green text-white border-0 f-semi-bold w-100" type="submit">Buat</button>
+                            <button class="btn bg-green text-white border-0 f-semi-bold" type="submit">Buat</button>
                         </div>
                     </form>
                 </div>

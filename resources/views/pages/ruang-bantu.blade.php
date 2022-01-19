@@ -5,7 +5,7 @@
 {{-- start of content --}}
 <section class="ruang-bantu" id="ruangBantu">
 
-    <h1 class="fs-2">Donasi & Penggalangan Dana</h1>
+    <h1 class="fs-2">Forum Diskusi, Donasi & Penggalangan Dana</h1>
     <p class="text-gray">Kumpulan informasi mengenai donasi, nomor rekening dan lainnya yang relevan dengan bantuan COVID-19</p>
     @can('auth')
         <a href="/ruang-bantu/create" class="btn bg-green text-white border-0 mb-3">Buat Postingan</a>

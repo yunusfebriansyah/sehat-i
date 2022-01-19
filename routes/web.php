@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\NeedController;
 use App\Http\Controllers\RuangBantuController;
 use App\Http\Controllers\SaveController;
 use App\Models\Category;
@@ -25,7 +26,11 @@ Route::get('/', function () {
 });
 
 Route::post('/ruang-bantu/{ruang_bantu:slug}/comment', [RuangBantuController::class, 'comment'])->middleware('auth');
+Route::put('/ruang-bantu/{ruang_bantu:slug}/verified', [RuangBantuController::class, 'verified'])->middleware('is_admin');
 Route::resource('/ruang-bantu', RuangBantuController::class);
+
+Route::put('/kontribusi/{need:slug}/verified', [NeedController::class, 'verified'])->middleware('is_admin');
+Route::resource('/kontribusi', NeedController::class)->except('show')->middleware('auth');
 
 Route::get('/simpan', [SaveController::class, 'index'])->middleware('auth');
 Route::post('/simpan/{need:slug}', [SaveController::class, 'store'])->middleware('auth');
