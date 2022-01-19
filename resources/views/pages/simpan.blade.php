@@ -293,7 +293,7 @@
 
 
 
-    <p class="text-center"><a href="#" class="text-green">Cari informasi lainnya ...</a></p>
+    <p class="text-center"><a href="https://covid19.go.id/" target="_blank" class="text-green">Cari informasi lainnya ...</a></p>
 
 
 </section>

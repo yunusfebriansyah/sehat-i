@@ -22,8 +22,32 @@ section{
     background-color: #1ACEA3;
 }
 
+.bg-blue{
+    background-color: rgb(54, 162, 235);
+}
+
+.bg-red{
+    background-color: rgb(255, 99, 132);
+}
+
+.bg-yellow{
+    background-color: rgb(255, 205, 86);
+}
+
 .text-green{
     color: #1ACEA3;
+}
+
+.text-blue{
+    color: rgb(54, 162, 235);
+}
+
+.text-red{
+    color: rgb(255, 99, 132);
+}
+
+.text-yellow{
+    color: rgb(255, 205, 86);
 }
 
 .bg-gray{
@@ -321,7 +345,7 @@ section.tips-isoma{
 }
 
 .pagination .page-item.active .page-link{
-    background-color: #1ACEA3 !important;
+    background-color: #1acea4 !important;
     border-color: #1ACEA3 !important;
     color: #fff
 }
@@ -342,6 +366,14 @@ img.user-photo{
 
 .comments .card, .comments .card .card-body{
     border-radius: 0 !important;
+}
+
+
+/* covid data */
+.covid-chart{
+    max-width: 200px;
+    margin: 0 auto;
+    margin-bottom: 30px;
 }
 
 

@@ -1,3 +1,8 @@
+<?php
+    $json_data = file_get_contents('https://api.kawalcorona.com/indonesia');
+    $response_data = json_decode($json_data);
+?>
+
 @extends('main-layout.main-non-navbar')
 
 @section('container')
@@ -7,9 +12,61 @@
 
     <h1 class="fs-2">Informasi Mengenai COVID-19</h1>
     <p class="text-gray">Kami sudah merangkum informasi mengenai COVID-19 yang perlu untuk anda ketahui.</p>
-    <p><a href="#" class="text-green">Cari informasi lainnya ...</a></p>
+    <p><a href="https://covid19.go.id/" target="_blank" class="text-green">Cari informasi lainnya ...</a></p>
 
     {{-- tips item --}}
+    <div class="row">
+        <div class="col-12 col-md-6 bg-white">
+            <div class="card border-0 bg-white shadow p-2 tips-item mb-3">
+                <div class="card-body bg-white">
+                    <h2 class="fs-4 text-center">Data COVID Indonesia Terkini</h2>
+                    <div class="card border-0 my-2">
+                        <div class="card-body">
+                            <canvas id="covid_chart" class="covid-chart"></canvas>
+                            <div class="row">
+                                <div class="col-6 col-lg-3 text-center mb-3">
+                                    <h5 class="card-title fs-6 text-yellow">Positif</h5>
+                                    <p class="card-text text-yellow" id="positif">{{ $response_data[0]->positif }}</p>
+                                </div>
+                                <div class="col-6 col-lg-3 text-center mb-3">
+                                    <h5 class="card-title fs-6 text-green">Sembuh</h5>
+                                    <p class="card-text text-green" id="sembuh">{{ $response_data[0]->sembuh }}</p>
+                                </div>
+                                <div class="col-6 col-lg-3 text-center mb-3">
+                                    <h5 class="card-title fs-6 text-red">Meninggal</h5>
+                                    <p class="card-text text-red" id="meninggal">{{ $response_data[0]->meninggal }}</p>
+                                </div>
+                                <div class="col-6 col-lg-3 text-center mb-3">
+                                    <h5 class="card-title fs-6 text-blue">Dirawat</h5>
+                                    <p class="card-text text-blue" id="dirawat">{{ $response_data[0]->dirawat }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 bg-white">
+            <div class="card border-0 bg-white shadow-lg p-2 kontak-darurat">
+                <div class="row g-0">
+                    <div class="col-3 bg-white d-flex align-items-center justify-content-center">
+                        <i class="fas fa-user-md text-green"></i>
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body bg-white">
+                            <p class="card-title text-black fs-3">Konsultasi Ahli</p>
+                            <p class="card-text text-gray">Jika ada pertanyaan kendala, segera konsultasi langsung ke ahlinya.</p>
+                            <a href="https://www.halodoc.com/tanya-dokter" target="_blank" class="btn bg-green text-white border-0">Konsultasi sekarang</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <h2 class="fs-3 mt-5 mb-3">Artikel Mengenai COVID-19</h2>
 
     <div class="card border-0 bg-white shadow p-2 tips-item mb-3">
         <div class="card-body bg-white">
@@ -134,26 +191,7 @@
         </div>
     </div>
 
-    {{-- end tips item --}}
 
-    <div class="row mt-5">
-        <div class="col-12 col-lg-6 my-3 bg-white">
-            <div class="card border-0 bg-white shadow-lg p-2 kontak-darurat">
-                <div class="row g-0">
-                    <div class="col-3 bg-white d-flex align-items-center justify-content-center">
-                        <i class="fas fa-user-md text-green"></i>
-                    </div>
-                    <div class="col-8">
-                        <div class="card-body bg-white">
-                            <p class="card-title text-black fs-3">Konsultasi Ahli</p>
-                            <p class="card-text text-gray">Jika ada pertanyaan kendala, segera konsultasi langsung ke ahlinya.</p>
-                            <a href="https://www.halodoc.com/tanya-dokter" target="_blank" class="btn bg-green text-white border-0">Konsultasi sekarang</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
 </section>
@@ -161,4 +199,20 @@
 
 
 {{-- end of content --}}
+@endsection
+
+@section('script')
+
+    <script>
+        let dataCovid = [
+            <?= str_replace(',', '', $response_data[0]->meninggal) ?>,
+            <?= str_replace(',', '', $response_data[0]->sembuh) ?>,
+            <?= str_replace(',', '', $response_data[0]->positif) ?>,
+            <?= str_replace(',', '', $response_data[0]->dirawat) ?>
+        ];
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/assets/js/chart.js"></script>
 @endsection

@@ -36,17 +36,17 @@ Route::get('/simpan', [SaveController::class, 'index'])->middleware('auth');
 Route::post('/simpan/{need:slug}', [SaveController::class, 'store'])->middleware('auth');
 Route::delete('/simpan/{save:id}', [SaveController::class, 'destroy'])->middleware('auth');
 
+Route::get('/kebutuhan/info-covid', function () {
+    return view('pages.info-covid', [
+        'title' => 'Informasi Mengenai COVID-19'
+    ]);
+});
+
 Route::get('/kebutuhan/{category:slug}', function (Category $category) {
     return view('pages.konten-kebutuhan', [
         'title' => "Kebutuhan " . $category->name,
         'heading' => $category->name,
         'items' => Need::where('category_id', $category->id)->search(request('search'))->location(request('lokasi'))->where('is_verified', true)->paginate(15)->withQueryString()
-    ]);
-});
-
-Route::get('/kebutuhan/info-covid', function () {
-    return view('pages.info-covid', [
-        'title' => 'Informasi Mengenai COVID-19'
     ]);
 });
 
