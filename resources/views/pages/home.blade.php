@@ -4,6 +4,10 @@
 
 {{-- start of content --}}
 
+@if (session('message'))
+    {!! session('message') !!}
+@endif
+
 {{-- banner section --}}
 <section class="banner" id="banner">
     <div class="welcome">
@@ -195,7 +199,6 @@
 {{-- end kontribusi  --}}
 
 
-
-
 {{-- end of content --}}
 @endsection
+

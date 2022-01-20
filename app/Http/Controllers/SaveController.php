@@ -39,18 +39,14 @@ class SaveController extends Controller
     {
 
         if( count( Save::where('need_id', $need->id)->where('user_id', Auth::user()->id)->get() ) > 0 ) :
-            return back()->with('notif', '<div class="alert bg-green text-white" role="alert">
-                Item <strong>sudah anda disimpan!</strong>
-            </div>');
+            return back()->with('notif', "<script>Swal.fire('Informasi!','Postingan sudah pernah anda simpan.','info')</script>");
         else:
             Save::create([
                 'user_id' => Auth::user()->id,
                 'need_id' => $need->id
             ]);
 
-            return back()->with('notif', '<div class="alert bg-green text-white" role="alert">
-                Item <strong>berhasil disimpan!</strong>
-            </div>');
+            return back()->with('notif', "<script>Swal.fire('Berhasil!','Postingan berhasil disimpan.','success')</script>");
         endif;
 
     }
@@ -65,8 +61,6 @@ class SaveController extends Controller
     {
         Save::destroy($save->id);
 
-        return back()->with('notif', '<div class="alert bg-green text-white" role="alert">
-            Item <strong>berhasil dihapus!</strong>
-        </div>');
+        return back()->with('notif', "<script>Swal.fire('Berhasil!','Item simpan berhasil dihapus.','success')</script>");
     }
 }

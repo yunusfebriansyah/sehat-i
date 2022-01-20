@@ -64,10 +64,7 @@ class NeedController extends Controller
 
         Need::create($validated);
 
-        return redirect('/kontribusi')->with('message', '<div class="alert bg-green text-white alert-dismissible fade show mb-3" role="alert">
-        Postingan <strong>berhasil dibuat</strong>.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>');
+        return redirect('/kontribusi')->with('message', "<script>Swal.fire('Berhasil!','Data penyedia berhasil diajukan. Tunggu verifikasi.','success')</script>");
 
     }
 
@@ -132,10 +129,7 @@ class NeedController extends Controller
 
         Need::where('slug', $need->slug)->update($validated);
 
-        return redirect('/kontribusi')->with('message', '<div class="alert bg-green text-white alert-dismissible fade show mb-3" role="alert">
-        Postingan <strong>berhasil diubah</strong>.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>');
+        return redirect('/kontribusi')->with('message', "<script>Swal.fire('Berhasil!','Data penyedia berhasil diubah. Tunggu verifikasi.','success')</script>");
 
     }
 
@@ -155,10 +149,7 @@ class NeedController extends Controller
 
         $need->delete();
 
-        return redirect('/kontribusi')->with('message', '<div class="alert bg-green text-white alert-dismissible fade show mb-3" role="alert">
-        Pengajuan penyedia <strong>berhasil dihapus</strong>.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>');
+        return redirect('/kontribusi')->with('message', "<script>Swal.fire('Berhasil!','Penyedia berhasil dihapus.','success')</script>");
     }
 
 
@@ -166,10 +157,7 @@ class NeedController extends Controller
     {
         Need::where('id', $need->id)->update(['is_verified' => true]);
 
-        return redirect('/kontribusi')->with('message', '<div class="alert bg-green text-white alert-dismissible fade show mb-3" role="alert">
-        Pengajuan penyedia <strong>berhasil diverifikasi</strong>.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>');
+        return redirect('/kontribusi')->with('message', "<script>Swal.fire('Berhasil!','Pengajuan penyedia berhasil diverifikasi','success')</script>");
     }
 
 

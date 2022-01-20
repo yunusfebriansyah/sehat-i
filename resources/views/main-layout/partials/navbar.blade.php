@@ -28,9 +28,9 @@
                     <a class="nav-link text-end dropdown-toggle {{ Request::is('akun') ? 'active' : '' }}" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                         {{ auth()->user()->nama }}
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li><a class="dropdown-item" href="/akun"><i class="fas fa-user-circle"></i> Profil</a></li>
-                        <li><a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                    <ul class="dropdown-menu py-0 rounded overflow-hidden" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item py-2" href="/akun"><i class="fas fa-user-circle"></i> Profil</a></li>
+                        <li><a class="dropdown-item py-2" href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                     </ul>
                 </div>
             </li>

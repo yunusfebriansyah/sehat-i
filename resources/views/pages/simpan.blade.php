@@ -11,13 +11,13 @@
         {!! session('notif') !!}
     @endif
 
+    @if ( count($ambulans) > 0 )
     <div class="card border-0 bg-white shadow p-2 mt-4">
         <div class="card-body bg-white">
             <button class="border-0 bg-white text-gray w-100 text-start m-0 p-0" type="button" data-bs-toggle="collapse" data-bs-target="#ambulans" aria-expanded="false" aria-controls="ambulans">
                 <h4 class="card-title text-black"><i class="fas fa-ambulance text-green me-2"></i>Ambulans</h4>
             </button>
             <div class="collapse mt-3" id="ambulans">
-                @if ( count($ambulans) > 0 )
                 <div class="row my-3">
                     @foreach ($ambulans as $item)
                     <div class="col-12 col-md-6 col-lg-4 mb-3">
@@ -40,21 +40,19 @@
                     </div>
                     @endforeach
                 </div>
-                @else
-                <p class="text-gray">- belum menyimpan apapun</p>
-                @endif
                 <button class="btn bg-green text-white" type="button" data-bs-toggle="collapse" data-bs-target="#ambulans" aria-expanded="false" aria-controls="ambulans"> Sembunyikan</button>
             </div>
         </div>
     </div>
+    @endif
 
+    @if ( count($oksigens) > 0 )
     <div class="card border-0 bg-white shadow p-2 mt-4">
         <div class="card-body bg-white">
             <button class="border-0 bg-white text-gray w-100 text-start m-0 p-0" type="button" data-bs-toggle="collapse" data-bs-target="#oksigens" aria-expanded="false" aria-controls="oksigens">
                 <h4 class="card-title text-black"><i class="fas fa-lungs text-green me-2"></i>Oksigens</h4>
             </button>
             <div class="collapse mt-3" id="oksigens">
-                @if ( count($oksigens) > 0 )
                 <div class="row my-3">
                     @foreach ($oksigens as $item)
                     <div class="col-12 col-md-6 col-lg-4 mb-3">
@@ -77,21 +75,19 @@
                     </div>
                     @endforeach
                 </div>
-                @else
-                <p class="text-gray">- belum menyimpan apapun</p>
-                @endif
                 <button class="btn bg-green text-white" type="button" data-bs-toggle="collapse" data-bs-target="#oksigens" aria-expanded="false" aria-controls="oksigens"> Sembunyikan</button>
             </div>
         </div>
     </div>
+    @endif
 
+    @if ( count($plasmas) > 0 )
     <div class="card border-0 bg-white shadow p-2 mt-4">
         <div class="card-body bg-white">
             <button class="border-0 bg-white text-gray w-100 text-start m-0 p-0" type="button" data-bs-toggle="collapse" data-bs-target="#plasmas" aria-expanded="false" aria-controls="plasmas">
                 <h4 class="card-title text-black"><i class="fas fa-plus-square text-green me-2"></i>Plasmas</h4>
             </button>
             <div class="collapse mt-3" id="plasmas">
-                @if ( count($plasmas) > 0 )
                 <div class="row my-3">
                     @foreach ($plasmas as $item)
                     <div class="col-12 col-md-6 col-lg-4 mb-3">
@@ -114,21 +110,19 @@
                     </div>
                     @endforeach
                 </div>
-                @else
-                <p class="text-gray">- belum menyimpan apapun</p>
-                @endif
                 <button class="btn bg-green text-white" type="button" data-bs-toggle="collapse" data-bs-target="#plasmas" aria-expanded="false" aria-controls="plasmas"> Sembunyikan</button>
             </div>
         </div>
     </div>
+    @endif
 
+    @if ( count($puskesmass) > 0 )
     <div class="card border-0 bg-white shadow p-2 mt-4">
         <div class="card-body bg-white">
             <button class="border-0 bg-white text-gray w-100 text-start m-0 p-0" type="button" data-bs-toggle="collapse" data-bs-target="#puskesmass" aria-expanded="false" aria-controls="puskesmass">
                 <h4 class="card-title text-black"><i class="fas fa-hospital text-green me-2"></i>Puskesmas</h4>
             </button>
             <div class="collapse mt-3" id="puskesmass">
-                @if ( count($puskesmass) > 0 )
                 <div class="row my-3">
                     @foreach ($puskesmass as $item)
                     <div class="col-12 col-md-6 col-lg-4 mb-3">
@@ -151,21 +145,19 @@
                     </div>
                     @endforeach
                 </div>
-                @else
-                <p class="text-gray">- belum menyimpan apapun</p>
-                @endif
                 <button class="btn bg-green text-white" type="button" data-bs-toggle="collapse" data-bs-target="#puskesmass" aria-expanded="false" aria-controls="puskesmass"> Sembunyikan</button>
             </div>
         </div>
     </div>
+    @endif
 
+    @if ( count($testSwaps) > 0 )
     <div class="card border-0 bg-white shadow p-2 mt-4">
         <div class="card-body bg-white">
             <button class="border-0 bg-white text-gray w-100 text-start m-0 p-0" type="button" data-bs-toggle="collapse" data-bs-target="#testSwap" aria-expanded="false" aria-controls="testSwap">
                 <h4 class="card-title text-black"><i class="fas fa-briefcase-medical text-green me-2"></i>Test Swap</h4>
             </button>
             <div class="collapse mt-3" id="testSwap">
-                @if ( count($testSwaps) > 0 )
                 <div class="row my-3">
                     @foreach ($testSwaps as $item)
                     <div class="col-12 col-md-6 col-lg-4 mb-3">
@@ -188,21 +180,19 @@
                     </div>
                     @endforeach
                 </div>
-                @else
-                <p class="text-gray">- belum menyimpan apapun</p>
-                @endif
                 <button class="btn bg-green text-white" type="button" data-bs-toggle="collapse" data-bs-target="#testSwap" aria-expanded="false" aria-controls="testSwap"> Sembunyikan</button>
             </div>
         </div>
     </div>
+    @endif
 
+    @if ( count($tempatVaksins) > 0 )
     <div class="card border-0 bg-white shadow p-2 mt-4">
         <div class="card-body bg-white">
             <button class="border-0 bg-white text-gray w-100 text-start m-0 p-0" type="button" data-bs-toggle="collapse" data-bs-target="#tempatVaksins" aria-expanded="false" aria-controls="tempatVaksins">
                 <h4 class="card-title text-black"><i class="fas fa-syringe text-green me-2"></i>Tempat Vaksin</h4>
             </button>
             <div class="collapse mt-3" id="tempatVaksins">
-                @if ( count($tempatVaksins) > 0 )
                 <div class="row my-3">
                     @foreach ($tempatVaksins as $item)
                     <div class="col-12 col-md-6 col-lg-4 mb-3">
@@ -225,21 +215,19 @@
                     </div>
                     @endforeach
                 </div>
-                @else
-                <p class="text-gray">- belum menyimpan apapun</p>
-                @endif
                 <button class="btn bg-green text-white" type="button" data-bs-toggle="collapse" data-bs-target="#tempatVaksins" aria-expanded="false" aria-controls="tempatVaksins"> Sembunyikan</button>
             </div>
         </div>
     </div>
+    @endif
 
+    @if ( count($tempatIsolasis) > 0 )
     <div class="card border-0 bg-white shadow p-2 mt-4">
         <div class="card-body bg-white">
             <button class="border-0 bg-white text-gray w-100 text-start m-0 p-0" type="button" data-bs-toggle="collapse" data-bs-target="#tempatIsolasis" aria-expanded="false" aria-controls="tempatIsolasis">
                 <h4 class="card-title text-black"><i class="fas fa-clinic-medical text-green me-2"></i>Tempat Isolasi</h4>
             </button>
             <div class="collapse mt-3" id="tempatIsolasis">
-                @if ( count($tempatIsolasis) > 0 )
                 <div class="row my-3">
                     @foreach ($tempatIsolasis as $item)
                     <div class="col-12 col-md-6 col-lg-4 mb-3">
@@ -262,13 +250,11 @@
                     </div>
                     @endforeach
                 </div>
-                @else
-                <p class="text-gray">- belum menyimpan apapun</p>
-                @endif
                 <button class="btn bg-green text-white" type="button" data-bs-toggle="collapse" data-bs-target="#tempatIsolasis" aria-expanded="false" aria-controls="tempatIsolasis"> Sembunyikan</button>
             </div>
         </div>
     </div>
+    @endif
 
     <hr class="bg-success my-5" style="height:2px;">
 

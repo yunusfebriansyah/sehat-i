@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('pages.home', [
-        'title' => 'Sehat.i | Aplikasi Penyedia Informasi Kesehatan'
+        'title' => 'Sehat.i | Saling Peduli untuk Empati'
     ]);
 });
 

@@ -69,10 +69,7 @@ class RuangBantuController extends Controller
 
         RuangBantu::create($validated);
 
-        return redirect('/kontribusi')->with('message', '<div class="alert bg-green text-white alert-dismissible fade show mb-3" role="alert">
-        Postingan <strong>berhasil dibuat</strong>.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>');
+        return redirect('/kontribusi')->with('message', "<script>Swal.fire('Berhasil!','Postingan berhasil dibuat. Tunggu verifikasi.','success')</script>");
 
     }
 
@@ -143,10 +140,7 @@ class RuangBantuController extends Controller
 
         RuangBantu::where('id', $ruangBantu->id)->update($validated);
 
-        return redirect('/kontribusi')->with('message', '<div class="alert bg-green text-white alert-dismissible fade show mb-3" role="alert">
-        Postingan <strong>berhasil diubah</strong>.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>');
+        return redirect('/kontribusi')->with('message', "<script>Swal.fire('Berhasil!','Postingan berhasil diubah. Tunggu verifikasi.','success')</script>");
 
     }
 
@@ -166,10 +160,7 @@ class RuangBantuController extends Controller
 
         $ruangBantu->delete();
 
-        return redirect('/kontribusi')->with('message', '<div class="alert bg-green text-white alert-dismissible fade show mb-3" role="alert">
-        Postingan <strong>Berhasil dihapus</strong>.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>');
+        return redirect('/kontribusi')->with('message', "<script>Swal.fire('Berhasil!','Postingan berhasil dihapus.','success')</script>");
 
     }
 
@@ -188,20 +179,14 @@ class RuangBantuController extends Controller
 
         Comment::create($validated);
 
-        return redirect("/ruang-bantu/$ruangBantu->slug")->with('message', '<div class="alert bg-green text-white alert-dismissible fade show mb-3" role="alert">
-        Komentar <strong>berhasil dikirim</strong>.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>');
+        return redirect("/ruang-bantu/$ruangBantu->slug")->with('message', "<script>Swal.fire('Berhasil!','Komentar berhasil dikirim.','success')</script>");
     }
 
     public function verified ( RuangBantu $ruangBantu )
     {
         RuangBantu::where('id', $ruangBantu->id)->update(['is_verified' => true]);
 
-        return redirect('/kontribusi')->with('message', '<div class="alert bg-green text-white alert-dismissible fade show mb-3" role="alert">
-        Postingan ruang bantu <strong>berhasil diverifikasi</strong>.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>');
+        return redirect('/kontribusi')->with('message', "<script>Swal.fire('Berhasil!','Postingan berhasil diverifikasi.','success')</script>");
     }
 
 

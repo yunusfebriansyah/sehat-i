@@ -110,6 +110,11 @@ h2{
     padding: 10px 0;
 }
 
+.navbar .dropdown-menu .dropdown-item:active{
+    background-color: #1ACEA3 !important;
+    color: #fff;
+}
+
 
 /* small navbar styles */
 .small-navbar {
@@ -376,6 +381,17 @@ img.user-photo{
     margin-bottom: 30px;
 }
 
+/* swal2 styles */
+.swal2-popup .swal2-actions .swal2-styled.swal2-confirm{
+    background-color: #1ACEA3 !important;
+    transition: .3s !important;
+    box-shadow: none;
+}
+
+
+.swal2-popup .swal2-actions .swal2-styled.swal2-confirm:hover{
+    background-color: #1fcea5 !important;
+}
 
 
 

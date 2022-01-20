@@ -10,10 +10,7 @@
         <div class="col-12 col-md-10 col-lg-8">
 
             @if ($errors->any())
-            <div class="alert alert-danger alert-dismissible fade show mb-3" role="alert">
-                Password <strong>gagal diganti!</strong> Pastikan semua data password benar!
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
+            <script>Swal.fire('Gagal!','Pastikan semua data benar!','error')</script>
             @endif
 
             @if (session('message'))

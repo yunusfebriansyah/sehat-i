@@ -21,10 +21,7 @@ class AuthController extends Controller
         unset($validated['confirm_password']);
         $validated['password'] = bcrypt($validated['password']);
         User::create($validated);
-        return redirect('/login')->with('message', '<div class="alert bg-green text-white alert-dismissible fade show mb-3" role="alert">
-        <strong>Berhasil registrasi</strong>. Silahkan login.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>');
+        return redirect('/login')->with('message', "<script>Swal.fire('Berhasil!','Registrasi berhasil. Silahkan login.','success')</script>");
     }
 
     public function login(Request $request)
@@ -35,28 +32,27 @@ class AuthController extends Controller
             'password' => 'required|min:8|max:255'
         ]);
 
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt($credentials)) :
             $request->session()->regenerate();
+            $user = User::firstWhere('username', $credentials['username'])->nama;
+            return redirect('/')->with('message', "<script>Swal.fire('Hai ". $user ."!','Login berhasil.','success')</script>");
+        endif;
 
-            return redirect('/');
-        }
-
-        return back()->with('message', '<div class="alert alert-danger alert-dismissible fade show mb-3" role="alert">
-        <strong>Login gagal!</strong> Pastikan username dan password benar.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>');
+        return back()->with('message', "<script>Swal.fire('Login Gagal!','Pastikan username dan password benar!','error')</script>");
 
     }
 
     public function logout(Request $request)
     {
+        $user = User::firstWhere('id', Auth::user()->id)->nama;
+
         Auth::logout();
 
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('/')->with('message', "<script>Swal.fire('Logout Berhasil!','Sampai jumpa lagi " . $user ."','success')</script>");
     }
 
     public function gantiPassword()
@@ -74,18 +70,16 @@ class AuthController extends Controller
             'confirm_password' => 'same:new_password'
         ]);
 
-        if (!Hash::check($validated['old_password'], User::firstWhere('id', Auth::user()->id)->password )) :
-            // The passwords not match...
-            return redirect('/akun/ganti-password')->with('message', '<div class="alert alert-danger alert-dismissible fade show mb-3" role="alert">
-            Password <strong>gagal diganti!</strong> Pastikan semua data password benar
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>');
+        // The passwords not match...
+        if( $validated['old_password'] === $validated['new_password'] ) :
+            return redirect('/akun/ganti-password')->with('message', "<script>Swal.fire('Gagal!','Password baru harus beda dengan yang lama.','warning')</script>");
         else :
-            User::where('id', Auth::user()->id)->update(['password' => bcrypt($validated['new_password'])]);
-            return redirect('/akun')->with('message', '<div class="alert bg-green text-white alert-dismissible fade show mb-3" role="alert">
-            Password <strong>berhasil diganti!</strong>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>');
+            if (!Hash::check($validated['old_password'], User::firstWhere('id', Auth::user()->id)->password )) :
+                    return redirect('/akun/ganti-password')->with('message', "<script>Swal.fire('Gagal!','Pastikan semua data benar!','error')</script>");
+            else:
+                User::where('id', Auth::user()->id)->update(['password' => bcrypt($validated['new_password'])]);
+                return redirect('/akun')->with('message', "<script>Swal.fire('Sukses!','Password berhasil diubah.','success')</script>");
+            endif;
         endif;
 
     }

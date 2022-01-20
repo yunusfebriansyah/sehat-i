@@ -60,7 +60,7 @@
                     @endforeach
                 </div>
                 @else
-                <p class="text-gray">- belum menyimpan apapun</p>
+                <p class="text-gray">- belum ada kontribusi</p>
                 @endif
                 <button class="btn bg-green text-white" type="button" data-bs-toggle="collapse" data-bs-target="#ruangBantus" aria-expanded="false" aria-controls="ruangBantus"> Sembunyikan</button>
             </div>
@@ -115,7 +115,7 @@
                     @endforeach
                 </div>
                 @else
-                <p class="text-gray">- belum menyimpan apapun</p>
+                <p class="text-gray">- belum ada kontribusi</p>
                 @endif
                 <button class="btn bg-green text-white" type="button" data-bs-toggle="collapse" data-bs-target="#needs" aria-expanded="false" aria-controls="needs"> Sembunyikan</button>
             </div>
@@ -177,7 +177,7 @@
                         @endforeach
                     </div>
                     @else
-                    <p class="text-gray">- belum menyimpan apapun</p>
+                    <p class="text-gray">- belum ada kontribusi</p>
                     @endif
                     <button class="btn bg-green text-white" type="button" data-bs-toggle="collapse" data-bs-target="#userRuangBantus" aria-expanded="false" aria-controls="userRuangBantus"> Sembunyikan</button>
                 </div>
@@ -239,7 +239,7 @@
                         @endforeach
                     </div>
                     @else
-                    <p class="text-gray">- belum menyimpan apapun</p>
+                    <p class="text-gray">- belum ada kontribusi</p>
                     @endif
                     <button class="btn bg-green text-white" type="button" data-bs-toggle="collapse" data-bs-target="#userNeeds" aria-expanded="false" aria-controls="userNeeds"> Sembunyikan</button>
                 </div>
